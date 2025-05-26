@@ -1,0 +1,29 @@
+#+title: E4 toolbox
+#+LANGUAGE: es
+
+* A MATLAB toolbox for time series analysis
+
+** What is E4 ?
+
+E4 is a MATLAB Toolbox for time series modeling and analysis. Its name, E4, refers to the Spanish /Estimación de modelos Econométricos en Espacio de los Estados/, meaning "State-Space Estimation of Econometric Models".
+
+E4  uses state-space methods to achieve flexibility and reliability. Despite its orientation to state-space, it also supports many standard time series models, such as VARMAX, structural econometric models or single-output transfer functions. These models can be estimated by exact maximum-likelihood, either under standard conditions or in an extended framework that allows for measurement errors, missing data, vector GARCH errors and constraints on the parameters.
+
+The Toolbox also includes ready-to-use functions for model specification, preliminary parameter estimation, analytical computation of the likelihood gradient and the information matrix, simulation, forecasting and signal extraction.
+
+E4 is free software. You can download it from: [[https://www.ucm.es/e-4/]]
+
+You are allowed to redistribute and/or modify E4 under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation.
+
+If you feel that  our contribution deserves an acknowledgement, you can do so by citing the following book in your works:
+
+** Companion book
+
+#+begin_quote
+Jose Manuel Casals, Alfredo Garcia-Hiernaux, Miguel Jerez, Sonia Sotoca, Adao Alexandre Trindade: [[https://www.routledge.com/State-Space-Methods-for-Time-Series-Analysis-Theory-Applications-and-Software/Casals-Garcia-Hiernaux-Jerez-Sotoca-Trindade/p/book/9781482219593][State-Space Methods for Time Series Analysis: Theory, Applications and Software]]. Chapman and Hall/CRC. ISBN 9781482219593 - CAT# K22164
+#+end_quote
+
+See this book at [[http://www.sponpress.com/books/details/9781482219593/][Taylor & Francis]], [[https://www.crcpress.com/State-Space-Methods-for-Time-Series-Analysis-Theory-Applications-and-Software/Casals-GarciaHiernaux-Jerez-Sotoca-Trindade/9781482219593][Chapman and Hall/CRC]] or [[http://www.amazon.com/State-Space-Methods-Time-Series-Analysis/dp/148221959X][Amazon.com]];
+or download free supplementary materials from the [[https://www.ucm.es/e-4/ss-book-microsite][book microsite]].
+
+[[https://www.ucm.es/e-4/ss-book-microsite][https://www.ucm.es/data/cont/docs/1034-2016-02-11-9781482219593.jpg]]

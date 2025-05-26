@@ -1,0 +1,12 @@
+#+title: Página web del grupo de investigación
+#+LANGUAGE: es
+#+OPTIONS: toc: t
+
+Repositorio para la web del grupo de investigación de la UCM
+
+- 940223 :: ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING
+
+* Enlaces
+
+- [[https://www.ucm.es/grupos/grupo/225][Grupo de investigación UCM]]
+- [[https://www.ucm.es/grupoee/][Antigua web]]

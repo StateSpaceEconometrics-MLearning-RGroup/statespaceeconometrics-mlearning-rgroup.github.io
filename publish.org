@@ -1,0 +1,84 @@
+** Org-publish
+
+We need a small elisp script to setup and publish  it.
+
+#+BEGIN_SRC emacs-lisp :tangle ./publish.el :results silent
+  (require 'ox-publish)
+
+  (use-package htmlize)
+
+  ;; Customize the HTML output
+  (setq org-html-validation-link nil            ;; Don't show validation link
+        org-html-head-include-scripts nil       ;; Use our own scripts
+        org-html-head-include-default-style nil ;; Use our own styles
+        org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+
+  (let* ((base-directory "./")
+         (org-export-with-broken-links t)
+         (org-publish-project-alist `(("html"
+  				     :base-directory ,(concat base-directory "content")
+  				     :base-extension "org"
+  				     :publishing-directory ,(concat base-directory "docs")
+  				     :exclude "docs"
+  				     :recursive t
+  				     :publishing-function org-html-publish-to-html
+  				     :auto-preamble t
+  				     :auto-sitemap t
+                                       :with-author nil           ;; Don't include author name
+                                       :with-creator nil          ;; Include Emacs and Org versions in footer
+                                       :with-toc t                ;; Include a table of contents
+                                       :section-numbers nil       ;; Don't include section numbers
+                                       :time-stamp-file nil)
+  				    
+  				    ("static-html"
+  				     :base-directory ,(concat base-directory "content")
+  				     :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|dat\\|mov\\|txt\\|svg\\|aiff"
+  				     :publishing-directory ,(concat base-directory "docs")
+  				     :exclude "docs"
+  				     :recursive t
+  				     :publishing-function org-publish-attachment)
+
+  				    ;; ... all the components ...
+  				    ;("scimax-eln" :components ("html" "static-html" "pdf")))))
+  				    ("web-grupo" :components ("html" "static-html")))))
+
+    (org-publish "web-grupo" t))
+#+END_SRC
+
+We can check out the local version.
+
+#+BEGIN_SRC emacs-lisp
+(browse-url "docs/index.html")
+#+END_SRC
+
+#+RESULTS:
+
+He excluido del proceso la generación de pdfs. El correspondiente código excluido es este:
+#+begin_src 
+				    ("pdf"
+				     :base-directory ,(concat base-directory "content")
+				     :base-extension "org"
+				     :publishing-directory ,(concat base-directory "docs/pdfs")
+				     :exclude "docs"
+				     :recursive t
+				     :publishing-function org-latex-publish-to-pdf
+				     :auto-preamble t
+				     :auto-sitemap t)
+#+end_src
+
+** COMMENT Commit and publish the html pages
+
+To publish these we go into the html directory, commit all the files and push them to GitHUB.
+
+#+BEGIN_SRC sh
+git add docs
+git commit docs -m "publish"
+git push
+#+END_SRC
+
+#+RESULTS:
+| [main  | f0607f8] | publish  |                   |                |    |              |
+| 19     | files    | changed, |               332 | insertions(+), | 87 | deletions(-) |
+| create | mode     | 100644   | docs/sitemap.html |                |    |              |
+
+After a bit you can find it at https://kitchingroup.cheme.cmu.edu/scimax-eln
