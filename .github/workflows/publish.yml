@@ -19,11 +19,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install emacs -y
-	  emacs --batch --eval "(require 'package)" \
-          	--eval "(add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\"))" \
-          	--eval "(package-initialize)" \
-          	--eval "(package-refresh-contents)" \
-          	--eval "(package-install 'htmlize)"
+          emacs --batch --eval "(require 'package)" \
+                --eval "(add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\"))" \
+                --eval "(package-initialize)" \
+                --eval "(package-refresh-contents)" \
+                --eval "(package-install 'htmlize)"
           emacs --batch -l publish.el
           pwd
           ls
