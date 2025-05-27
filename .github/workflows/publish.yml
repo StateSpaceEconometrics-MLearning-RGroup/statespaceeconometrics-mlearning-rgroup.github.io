@@ -1,38 +1,30 @@
-# adapted from https://github.com/purcell/package-lint/blob/master/.github/workflows/test.yml
-name: Publish to GitHub Pages
+name: Pushkin Web Deploy
 
-on: 
+on:
   push:
     branches:
       - main
+
 jobs:
-  build:
-    runs-on: ubuntu-latest    
-    strategy:
-      fail-fast: false
-      matrix:
-        emacs_version:
-          - snapshot
-
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-    - uses: purcell/setup-emacs@master
-      with:
-        version: ${{ matrix.emacs_version }}
+      - name: Checkout main
+        uses: actions/checkout@v4
 
-      
-    - uses: actions/checkout@v4
-    - name: org-publish
-      run: |
-        emacs -batch -nw -l publish.el
-        pwd
-        ls
-        ls docs/*
+      - name: Instala Emacs y ejecuta publish.el
+        run: |
+          sudo apt-get update
+          sudo apt-get install emacs -y
+          emacs --batch -l publish.el
+          pwd
+          ls
+          ls docs/*
 
-    # Deploy the html in docs to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
-        name: Publish to GitHub Pages
-	  token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy docs/ a gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          destination_dir: docs
