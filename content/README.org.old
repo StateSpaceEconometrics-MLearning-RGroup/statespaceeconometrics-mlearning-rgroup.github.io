@@ -1,0 +1,21 @@
+* Carpeta con ficheros fuente de las distintas páginas de esta web
+
+Están en formato =org-mode= y se exportan a =html= con [[https://www.gnu.org/software/emacs/][GNU Emacs]]
+ejecutando el guión [[file:~/CloudStation/ReposGH/PaginaWeb/statespaceeconometrics-mlearning-rgroup.github.io/publish.el][=publish.el=]] del siguiente modo:
+#+begin_src bash
+  emacs --batch -l publish.el
+#+end_src
+(también se
+pueden exportar con [[https://pandoc.org/][Pandoc]]).
+
+Los ficheros =html= generados a partir de los ficheros fuente =.org=
+se situan en la carpeta [[file:~/CloudStation/ReposGH/PaginaWeb/statespaceeconometrics-mlearning-rgroup.github.io/docs/][=docs=]] (de la rama =gh-pages=). Es ese
+directorio el que nutre la [[https://statespaceeconometrics-mlearning-rgroup.github.io/][web]] mediante [[https://pages.github.com/][GitHub pages]].
+
+Para todo esto me he basado en
+[[https://github.com/jkitchin/scimax-eln?tab=readme-ov-file]]. Los pasos
+del /workflow/ que exporta los ficheros a =html= y los copia en la
+carpeta [[file:~/CloudStation/ReposGH/PaginaWeb/statespaceeconometrics-mlearning-rgroup.github.io/docs/][=docs=]] (de la rama =gh-pages=) se pueden ver en el fichero
+[[file:~/CloudStation/ReposGH/PaginaWeb/statespaceeconometrics-mlearning-rgroup.github.io/.github/workflows/publish.yml][publish.yml]].
+
+# he exportado este fichero a markdown desde emacs con =M-x org-gfm-export-to-markdown=
