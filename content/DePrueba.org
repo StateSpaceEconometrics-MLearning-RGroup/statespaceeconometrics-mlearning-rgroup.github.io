@@ -1,0 +1,6 @@
+#+title: Contenido de prueba
+#+LANGUAGE: es
+
+Esto es una prueba para verificar que el workflow que genera los
+ficheros html en GitHub de manera automática finciona correctamente.
+
