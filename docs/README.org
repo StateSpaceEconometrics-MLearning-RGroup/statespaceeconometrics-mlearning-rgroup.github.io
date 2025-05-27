@@ -1,0 +1,4 @@
+* Carpeta contenedora de documentos acesibles desde la web
+
+Dichos documentos estarán alojados en esta carpeta, pero en la rama
+=gh-pages=
