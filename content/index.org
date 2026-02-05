@@ -28,6 +28,12 @@ GNU.
 
 - Contacto :: Nuestro grupo tiene su sede en la Facultad de Ciencias Económicas de la UCM. Campus de Somosaguas. 28223 Pozuelo de Alarcón (MADRID).
 
+* The Computational Garage
+
+Este grupo estimula el intercambio de ideas y la creación de vínculos académicos entre jóvenes investigadores.
+#+begin_center
+Más información [[file:TheComputationalGarage.org][*aquí*]].
+#+end_center
 
 * Enlace a la antigua web y enlace a la información del grupo
 

@@ -1,0 +1,104 @@
+#+TITLE: The Computational Garage
+#+SUBTITLE: Econometría en el Espacio de los Estados y Machine Learning
+#+AUTHOR: Grupo de Investigación UCM
+#+LANGUAGE: es
+#+DATE: Febrero de 2026
+#+OPTIONS: toc:nil
+
+#+latex: \maketitle
+
+
+#+begin_quote
+Ésta es una iniciativa del grupo de investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
+#+end_quote
+
+* Motivación y propósito
+
+El objetivo de esta iniciativa es crear un espacio informal, recurrente y protegido donde investigadores en etapas iniciales de su carrera académica puedan:
+
+- Presentar y discutir trabajos preliminares (ideas en construcción, proyectos que “aún no funcionan”, primeros resultados).
+
+- Conocerse y construir vínculos académicos.
+
+- Compartir problemas, enfoques y métodos en un entorno cercano, sin la presión ni los incentivos propios de un seminario formal.
+
+- Simplemente dar a conocer en qué están trabajando en un foro acogedor y estimulante.
+
+La idea no es organizar un seminario tradicional, sino algo más parecido a lo que uno le cuenta a un compañero de despacho.
+
+* A quién va dirigido
+
+La iniciativa está pensada _para investigadores en etapas iniciales_ (ayudantes doctores, doctorandos en fases tempranas, estudiantes de TFM/TFG), pero no sin excluir a investigadores seniors (o no tan seniors), afines al GI y que deseen participar o involucrarse de alguna manera en esta iniciativa. 
+
+* COMMENT Temas de interés
+
+A pesar del rimbombante nombre de /Economía Computacional y Econometría/, todos los temas son bienvenidos.
+
+* Formato de las sesiones
+
+- Duración :: un máximo de 20 minutos de exposición y discusión podría ser suficiente.
+
+  # /*Paco* sugiere ser más explícito: 20 minutos de presentación sin derecho a preguntas + 15 minutos de discusión (hay un moderador que limita ambos tiempos. Un híbrido podría ser: 20 min de presentación, de los cuales no hay preguntas en los primeros 10 + 15 de discusión, todo marcado por el moderador. No sé si tiene sentido (y sería de bajo mantenimiento) crear un foro público donde, ex post, la gente pueda dejar su opinión. Un rato después de la presentación uno puede escribir o leer con más calma, y eso puede ser más útil que el habitual “quick kill”. Esto nos da fuerza para un “paramos aquí”, y el moderador puede eliminar comentarios fuera de tono)./
+
+  # Mi sugerencia es que lo que dice Paco sea solo una sugerencia, es decir, que no haya reglas muy estrictas. No sabemos qué tipo de aportaciones nos podemos encontrar, por lo que dejaría claro que el objetivo es que quien quiera contar algo, tenga la oportunidad de hacerlo durante un rato ante los demás. Simplemente pediría que ese tiempo no sea muy extenso para no abusar de la atención de los presentes.
+
+- Estilo :: informal, orientado a ideas y problemas, no a resultados cerrados.
+
+- Lenguaje :: técnico si hace falta, puede o no haber formalismo, no es necesario. 
+
+  # /*Paco* sugiere que ser demasiado técnico debería ser siempre evitable; vamos a estar 10 minutos escuchando sin preguntar, y dicho esto, creo que es bueno dejar claro que nos importa el ángulo computacional/matemático. Ej.: si haces econometría, cuéntame tu principal problema -o problema esperado- en la estimación, eso es “garage”./
+
+  # Prefiero dejarlo abierto tal y como lo ha escrito Alfredo. La propia experiencia de ver y realizar exposiciones enseñará a los potenciales ponentes hasta dónde se puede llegar sin que la exposición se oscurezca demasiado. Además, esto tiene que ver con la personalidad de cada uno y la concreción del tema a exponer. Yo preferiría mantener el espíritu que transmite la sección de [[Motivación y propósito]]: dejar que los participantes se aproximen sin prejuicios a un foro en el que se les va a escuchar con cariño. En cuanto al o de dejar claro "/que nos importa el ángulo computacional/matemático/", yo lo relajaría a "/nos gusta el ángulo computacional/matemático/". 
+
+- Idioma :: español o inglés, sin preferencia.
+
+- Formato :: flexible.
+
+* Reglas de juego
+
+En ningún caso se espera que los trabajos estén “listos”; más bien, todo lo contrario.
+
+Una regla básica para la audiencia será escuchar, comentar con espíritu constructivo y evitar monopolizar la discusión.
+
+* Fechas y calendario
+
+- Periodicidad :: [por definir... no tiene por qué ser fija (/dependerá en gran medida de la demanda realizada por aquellos a quienes está destinada esta iniciativa/)].
+
+- Día de la semana en la que celebrar las reuniones :: [por definir]. 
+
+  # Estoy de acuerdo con Paco, pero probablemente tengamos que ajustarlo y afinarlo sobre la marcha. En cuanto a la periodicidad, dependerá mucho de la afluencia de candidatos a presentar ideas. Si hay poca, quizá la periodicidad quincenal sea excesiva. Si hay muchas, puede que haya que aproximar algunas sesiones en el tiempo. Quizá sea suficiente fijar un día de la semana a priori y ofrecer la posibilidad de que quien lo desee pueda solicitar, con suficiente antelación, contar algo sobre lo que está haciendo para tal semana. Es decir, que sean los ponentes quienes pidan el día. Lo contrario implicaría buscar ponentes, lo que cambiaría la atmósfera de “hacer algo parecido a lo que uno le cuenta a un compañero de despacho” a un ambiente en el cual “tu compañero te llama para que le cuentes”. Por eso estoy más en la línea de lo que sugería Alfredo y que he subrayado más abajo.
+
+- Horario :: [idem. (/En cualquier caso nunca coincidirá con el seminario del Departamento/ICAE/)] 
+
+# Totalmente de acuerdo con Paco: no deberíamos coincidir con el ICAE. Eso nos perjudicaría mutuamente.
+
+- Lugar :: Seminario 302.
+
+El calendario se irá cerrando de forma flexible; siempre en función de la disponibilidad y del número de participantes.
+
+# +CAPTION: Título de la imagen
+#+ATTR_LATEX: :width 0.8\textwidth :center t
+#+ATTR_ORG: :width 400
+[[file:LogoSmall.png]]
+
+
+* COMMENT Participantes
+
+- Potenciales participantes que pensamos que pueden estar interesados :: David Suárez, Juan Manuel Sánchez-Cartas, Nicolás Bonino, Franceska Tomori, Daniel Bacaicoa, David Guerrero, Miguel Burgos, Miguel Yagüe, Nicolás Lorenti, Eiko Alonso (TFG), Alba Miñano-Mañero, Young Kyu, Julio Rivera... (cualquier joven investigador que manifieste interés por contarnos alguna cosa afín a las líneas del [[https://statespaceeconometrics-mlearning-rgroup.github.io/#orgf965b5a][Grupo de Investigación]]).
+# Francesca Lipari, Patrizia Asurmendi, María Jesús Moreta...
+  - Padrinos de la idea ::  Alfredo García-Hiernaux, Paco Álvarez, Marcos Bujosa. 
+# *Y más que probablemente dispuestos a apoyarnos:* Elena, Gisela, Blanca, Juanito, Andrés, Manolín, Rafa(s)...
+
+
+
+*** COMMENT Nota para usuarios de Overleaf
+    :PROPERTIES:  
+    :UNNUMBERED: t
+    :END:  
+
+Documento transformado de MS Word a [[https://orgmode.org/][OrgMode]] con [[https://pandoc.org/][pandoc]]:
+#+BEGIN_SRC sh
+pandoc -f docx -t org PropuestaWorkshopInterno.docx -o  PropuestaWorkshopInterno.org
+#+END_SRC
+
+

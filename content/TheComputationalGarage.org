@@ -1,0 +1,102 @@
+#+TITLE: The Computational Garage
+# +SUBTITLE: Econometría en el Espacio de los Estados y Machine Learning
+#+AUTHOR: Econometría en el Espacio de los Estados y Machine Learning 
+# Grupo de Investigación UCM
+#+LANGUAGE: es
+#+DATE: Febrero de 2026
+# +OPTIONS: toc:nil 
+# +OPTIONS: title:nil
+
+# ###########
+# ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
+# +SETUPFILE: ../css/simple_inlineUCM.theme  
+# +SETUPFILE: ../css/bigblow_inline.theme
+#+SETUPFILE: ../css/readtheorg_inline.theme
+# ###########
+
+
+#+latex: \maketitle
+
+# +CAPTION: Título de la imagen
+#+attr_html: :width 300px
+#+ATTR_HTML: :align center
+#+ATTR_LATEX: :width 0.8\textwidth :center t
+#+ATTR_ORG: :width 400
+[[file:TheComputationalGarage/LogoSmall.png]]
+
+
+#+begin_quote
+Ésta es una iniciativa del grupo de investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
+#+end_quote
+
+* Motivación y propósito
+
+El objetivo de esta iniciativa es crear un espacio informal, recurrente y protegido donde investigadores en etapas iniciales de su carrera académica puedan:
+
+- Presentar y discutir trabajos preliminares (ideas en construcción, proyectos que “aún no funcionan”, primeros resultados).
+
+- Conocerse y construir vínculos académicos.
+
+- Compartir problemas, enfoques y métodos en un entorno cercano, sin la presión ni los incentivos propios de un seminario formal.
+
+- Simplemente dar a conocer en qué están trabajando en un foro acogedor y estimulante.
+
+La idea no es organizar un seminario tradicional, sino algo más parecido a lo que uno le cuenta a un compañero de despacho.
+
+* A quién va dirigido
+
+La iniciativa está pensada _para investigadores en etapas iniciales_ (ayudantes doctores, doctorandos en fases tempranas, estudiantes de TFM/TFG), pero no sin excluir a investigadores seniors (o no tan seniors), afines al GI y que deseen participar o involucrarse de alguna manera en esta iniciativa. 
+
+* COMMENT Temas de interés
+
+A pesar del rimbombante nombre de /Economía Computacional y Econometría/, todos los temas son bienvenidos.
+
+* Formato de las sesiones
+
+- Duración :: un máximo de 20 minutos de exposición y discusión podría ser suficiente.
+
+- Estilo :: informal, orientado a ideas y problemas, no a resultados cerrados.
+
+- Lenguaje :: técnico si hace falta, puede o no haber formalismo, no es necesario. 
+
+- Idioma :: español o inglés, sin preferencia.
+
+- Formato :: flexible.
+
+* Reglas de juego
+
+- En ningún caso se espera que los trabajos estén “listos”; más bien, todo lo contrario.
+
+- Una regla básica para la audiencia será escuchar, comentar con espíritu constructivo y evitar monopolizar la discusión.
+
+* Fechas y calendario
+
+- Periodicidad :: [por definir... no tiene por qué ser fija (/dependerá en gran medida de la demanda realizada por aquellos a quienes está destinada esta iniciativa/)].
+
+- Día de la semana en la que celebrar las reuniones :: [por definir]. 
+
+- Horario :: [idem. (/En cualquier caso nunca coincidirá con el seminario del Departamento/ICAE/)] 
+
+- Lugar :: Seminario 302.
+
+El calendario se irá cerrando de forma flexible; siempre en función de la disponibilidad y del número de participantes.
+
+* COMMENT Participantes
+
+- Potenciales participantes que pensamos que pueden estar interesados :: David Suárez, Juan Manuel Sánchez-Cartas, Nicolás Bonino, Franceska Tomori, Daniel Bacaicoa, David Guerrero, Miguel Burgos, Miguel Yagüe, Nicolás Lorenti, Eiko Alonso (TFG), Alba Miñano-Mañero, Young Kyu, Julio Rivera... (cualquier joven investigador que manifieste interés por contarnos alguna cosa afín a las líneas del [[https://statespaceeconometrics-mlearning-rgroup.github.io/#orgf965b5a][Grupo de Investigación]]).
+# Francesca Lipari, Patrizia Asurmendi, María Jesús Moreta...
+  - Padrinos de la idea ::  Alfredo García-Hiernaux, Paco Álvarez, Marcos Bujosa. 
+# *Y más que probablemente dispuestos a apoyarnos:* Elena, Gisela, Blanca, Juanito, Andrés, Manolín, Rafa(s)...
+
+
+*** COMMENT Nota para usuarios de Overleaf
+    :PROPERTIES:  
+    :UNNUMBERED: t
+    :END:  
+
+Documento transformado de MS Word a [[https://orgmode.org/][OrgMode]] con [[https://pandoc.org/][pandoc]]:
+#+BEGIN_SRC sh
+pandoc -f docx -t org PropuestaWorkshopInterno.docx -o  PropuestaWorkshopInterno.org
+#+END_SRC
+
+
