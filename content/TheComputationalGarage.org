@@ -5,7 +5,7 @@
 #+LANGUAGE: es
 #+DATE: Febrero de 2026
 # +OPTIONS: toc:nil 
-# +OPTIONS: title:nil
+#+OPTIONS: title:nil
 
 # ###########
 # ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
@@ -15,18 +15,18 @@
 # ###########
 
 
-#+latex: \maketitle
+# +latex: \maketitle
 
 # +CAPTION: Título de la imagen
-#+attr_html: :width 300px
+#+attr_html: :width 450px
 #+ATTR_HTML: :align center
 #+ATTR_LATEX: :width 0.8\textwidth :center t
 #+ATTR_ORG: :width 400
-[[file:TheComputationalGarage/LogoSmall.png]]
+[[file:TheComputationalGarage/LogoOKrecortado.png]]
 
 
 #+begin_quote
-Ésta es una iniciativa del grupo de investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
+Ésta es una iniciativa del Grupo de Investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
 #+end_quote
 
 * Motivación y propósito

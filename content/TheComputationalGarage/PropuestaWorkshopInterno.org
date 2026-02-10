@@ -4,12 +4,19 @@
 #+LANGUAGE: es
 #+DATE: Febrero de 2026
 #+OPTIONS: toc:nil
+#+OPTIONS: title:nil
 
-#+latex: \maketitle
+# +latex: \maketitle
+
+#+attr_html: :width 500px
+#+ATTR_HTML: :align center
+#+ATTR_LATEX: :width 1.0\textwidth :center t
+#+ATTR_ORG: :width 400
+[[file:LogoAlargadorecortado.png]]
 
 
 #+begin_quote
-Ésta es una iniciativa del grupo de investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
+Ésta es una iniciativa del Grupo de Investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
 #+end_quote
 
 * Motivación y propósito
@@ -56,9 +63,9 @@ A pesar del rimbombante nombre de /Economía Computacional y Econometría/, todo
 
 * Reglas de juego
 
-En ningún caso se espera que los trabajos estén “listos”; más bien, todo lo contrario.
+- En ningún caso se espera que los trabajos estén “listos”; más bien, todo lo contrario.
 
-Una regla básica para la audiencia será escuchar, comentar con espíritu constructivo y evitar monopolizar la discusión.
+- Una regla básica para la audiencia será escuchar, comentar con espíritu constructivo y evitar monopolizar la discusión.
 
 * Fechas y calendario
 
@@ -76,11 +83,12 @@ Una regla básica para la audiencia será escuchar, comentar con espíritu const
 
 El calendario se irá cerrando de forma flexible; siempre en función de la disponibilidad y del número de participantes.
 
+* COMMENT LOGO
+
 # +CAPTION: Título de la imagen
 #+ATTR_LATEX: :width 0.8\textwidth :center t
 #+ATTR_ORG: :width 400
-[[file:LogoSmall.png]]
-
+[[file:LogoOKrecortado.png]]
 
 * COMMENT Participantes
 

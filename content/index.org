@@ -1,5 +1,7 @@
 #+title: 940223 - ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING
 #+LANGUAGE: es
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
 
 # ###########
 # ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
@@ -10,14 +12,8 @@
 # +attr_html: :width 250px :align right
 # https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png
 
-Nuestro Grupo de investigación se creó en Diciembre de 2004, para
-organizar nuestras investigaciones sobre la teoría y las aplicaciones
-de los métodos de Espacio de los Estados y, en concreto, para
-adaptarlos a la modelización econométrica de series temporales.
-
-Los resultados de este trabajo se implementan sistemáticamente en una [[file:E4.org][toolbox de MATLAB (E4)]] que se distribuye gratuitamente bajo licencia
-GNU.
-
+Nuestro [[https://www.ucm.es/grupos/grupo/225][grupo de investigación]] fue fundado en diciembre de 2004 con el objetivo de organizar nuestras investigaciones sobre la teoría y aplicaciones de los métodos en el Espacio de Estados, enfocándonos especialmente a la modelización econométrica de series temporales. Con el tiempo, hemos ampliado nuestro ámbito de estudio al campo del /Machine Learning/.
+ 
 - [[https://produccioncientifica.ucm.es/grupos/5080/detalle][Detalle del grupo]]
 - [[https://produccioncientifica.ucm.es/grupos/5080/lineas][Líneas de investigación]]
 - [[https://produccioncientifica.ucm.es/grupos/5080/proyectos][Proyectos de investigación]]
@@ -25,16 +21,22 @@ GNU.
 - [[https://produccioncientifica.ucm.es/grupos/5080/colaboracion][Colaboración]]
 - [[https://produccioncientifica.ucm.es/grupos/5080/tesis][Tesis]]
 
+Enlace a la [[https://www.ucm.es/grupoee/][antigua web del grupo]].
 
-- Contacto :: Nuestro grupo tiene su sede en la Facultad de Ciencias Económicas de la UCM. Campus de Somosaguas. 28223 Pozuelo de Alarcón (MADRID).
+Algunos de los proyectos desarrollados en este grupo han sido implementados en la [[file:E4.org][toolbox */E4/*]] de MatLab.
+
+** COMMENT Contacto
+Facultad de Ciencias Económicas de la UCM. Campus de Somosaguas. 28223 Pozuelo de Alarcón (MADRID).
 
 * The Computational Garage
 
-Este grupo estimula el intercambio de ideas y la creación de vínculos académicos entre jóvenes investigadores.
-#+begin_center
-Más información [[file:TheComputationalGarage.org][*aquí*]].
-#+end_center
+#+attr_html: :width 350px
+#+ATTR_HTML: :align center
+#+ATTR_ORG: :width 400
+[[file:TheComputationalGarage.org][file:TheComputationalGarage/LogoAlargadoRecortado.png]]
 
-* Enlace a la antigua web y enlace a la información del grupo
+Desde este grupo estimulamos el intercambio de ideas y la creación de vínculos académicos entre jóvenes investigadores. Más información [[file:TheComputationalGarage.org][*aquí*]]
 
-#+INCLUDE: "../README.org::* Enlaces" :only-contents t 
+* COMMENT Enlace a la antigua web y enlace a la información del grupo
+
+# +INCLUDE: "../README.org::* Enlaces" :only-contents t 
