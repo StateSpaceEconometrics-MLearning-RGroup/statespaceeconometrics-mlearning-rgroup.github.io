@@ -1,0 +1,25 @@
+#+TITLE: Histórico de Sesiones
+#+AUTHOR: The Computational Garage
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:nil html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+
+# +HTML: <header class="site-header">
+# +HTML: <img src="LogoAlargadoRecortado.png" alt="Logo del grupo" class="logo"/>
+# #+HTML: <h1>The Computational Garage</h1>
+# +HTML: </header>
+
+
+
+* 2026
+
+** 2026-03-03
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: session
+   :SPEAKERS: Almudena García Sanz; Young Kyu Hwang
+   :END:
+
+   - *Ponentes:* Almudena García Sanz y Young Kyu Hwang
+   # - *Título:* Métodos variacionales en ecuaciones en derivadas parciales
+   # - *Resumen:* Presentación de técnicas variacionales modernas aplicadas a EDP elípticas.
+

@@ -29,6 +29,10 @@
 Ésta es una iniciativa del Grupo de Investigación (GI) [[https://statespaceeconometrics-mlearning-rgroup.github.io][/Econometría en Espacio de los Estados y Machine Learning/]] impulsada con absoluta independencia de ningún departamento o instituto de la UCM.
 #+end_quote
 
+* Sesiones programadas
+
+[[file:TheComputationalGarage/sesiones.org][Sesiones]]
+
 * Motivación y propósito
 
 El objetivo de esta iniciativa es crear un espacio informal, recurrente y protegido donde investigadores en etapas iniciales de su carrera académica puedan:
