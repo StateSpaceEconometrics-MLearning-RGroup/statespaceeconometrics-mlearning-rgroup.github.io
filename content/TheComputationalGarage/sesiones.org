@@ -17,9 +17,13 @@
    :PROPERTIES:
    :HTML_CONTAINER_CLASS: session
    :SPEAKERS: Almudena García Sanz; Young Kyu Hwang
+   :TIME: 11:30
+   :LOCATION: Aula 302, Pabellón de Primero
    :END:
 
    - *Ponentes:* Almudena García Sanz y Young Kyu Hwang
+   - *Hora:* 11:30
+   - *Lugar:* Aula 302, Pabellón de Primero
    # - *Título:* Métodos variacionales en ecuaciones en derivadas parciales
    # - *Resumen:* Presentación de técnicas variacionales modernas aplicadas a EDP elípticas.
 
