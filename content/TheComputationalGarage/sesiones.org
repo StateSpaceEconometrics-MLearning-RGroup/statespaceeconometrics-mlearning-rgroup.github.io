@@ -13,11 +13,25 @@
 
 * 2026
 
+** 2026-03-17
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: session
+   :SCHEDULED: <2026-03-17 Thu 11:30>
+   :SPEAKERS: Nicolás Bonino; David Suárez
+   :LOCATION: Aula 302, Pabellón de Primero
+   :END:
+
+   - *Ponentes:* Nicolás Bonino y David Suárez
+   - *Hora:* 11:30
+   - *Lugar:* Aula 302, Pabellón de Primero
+
+
+
 ** 2026-03-03
    :PROPERTIES:
    :HTML_CONTAINER_CLASS: session
    :SPEAKERS: Almudena García Sanz; Young Kyu Hwang
-   :TIME: 11:30
+   :SCHEDULED: <2026-03-03 Thu 11:30>
    :LOCATION: Aula 302, Pabellón de Primero
    :END:
 
