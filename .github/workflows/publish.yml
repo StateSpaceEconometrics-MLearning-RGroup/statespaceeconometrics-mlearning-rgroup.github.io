@@ -36,3 +36,22 @@ jobs:
           publish_dir: ./docs
           publish_branch: gh-pages
           destination_dir: docs
+
+      - name: Comprobar si sesiones.org ha cambiado
+        id: check_sesiones
+        run: |
+          if git diff --name-only HEAD^ HEAD 2>/dev/null | grep -q "content/TheComputationalGarage/sesiones.org"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Enviar notificación de nueva sesión
+        if: steps.check_sesiones.outputs.changed == 'true'
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+        run: |
+          python3 -m pip install --quiet -r requirements.txt
+          python3 scripts/send_session_notification.py
