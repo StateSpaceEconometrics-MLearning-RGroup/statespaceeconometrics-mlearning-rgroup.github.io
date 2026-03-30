@@ -13,6 +13,19 @@
 
 * 2026
 
+** 2026-03-31
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: session
+   :SCHEDULED: <2026-03-31 Thu 11:30>
+   :SPEAKERS: Máximo Meridio
+   :LOCATION: Teatro de Mérida o el Coliseo
+   :END:
+
+   - *Ponentes:* Máximo Meridio
+   - *Hora:* 11:30
+   - *Lugar:* Teatro de Mérida o el Coliseo (se avisará con antelación suficiente)
+
+
 ** 2026-03-24
    :PROPERTIES:
    :HTML_CONTAINER_CLASS: session
