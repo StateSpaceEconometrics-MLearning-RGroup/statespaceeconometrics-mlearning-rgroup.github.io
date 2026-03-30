@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Instala Emacs y ejecuta publish.el
         run: |
