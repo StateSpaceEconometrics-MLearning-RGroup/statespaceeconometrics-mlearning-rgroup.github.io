@@ -3,12 +3,12 @@
 send_session_notification.py
 
 Detects when a new session has been added to sesiones.org (first subsection
-under the current year) and sends an HTML email notification via SendGrid.
+under the current year) and sends an HTML email notification via Resend.
 
 Required environment variables (GitHub Secrets):
-  SENDGRID_API_KEY   – API key for SendGrid
+  RESEND_API_KEY     – API key for Resend
   EMAIL_RECIPIENTS   – Comma-separated list of recipient email addresses
-  EMAIL_FROM         – Sender email address (must be verified in SendGrid)
+  EMAIL_FROM         – Sender email address (default: onboarding@resend.dev for testing)
 """
 
 import os
@@ -19,6 +19,7 @@ from datetime import datetime
 
 SESIONES_PATH = "content/TheComputationalGarage/sesiones.org"
 WEB_URL = "https://statespaceeconometrics-mlearning-rgroup.github.io/TheComputationalGarage/sesiones.html"
+DEFAULT_FROM_EMAIL = "onboarding@resend.dev"
 
 SPANISH_WEEKDAYS = {
     0: "lunes",
@@ -223,34 +224,35 @@ Universidad Complutense de Madrid
 
 
 # ---------------------------------------------------------------------------
-# SendGrid sending
+# Resend sending
 # ---------------------------------------------------------------------------
 
 def send_email(subject, html_body, plain_text, recipients, from_email, api_key):
-    """Send the notification email via SendGrid."""
-    from sendgrid import SendGridAPIClient
-    from sendgrid.helpers.mail import Mail, To, Content
+    """Send the notification email via Resend."""
+    import resend
 
-    to_list = [To(email=addr.strip()) for addr in recipients if addr.strip()]
+    resend.api_key = api_key
+
+    # Resend expects a list of recipient emails
+    to_list = [addr.strip() for addr in recipients if addr.strip()]
     if not to_list:
         print("[ERROR] No valid recipient addresses found.")
         return False
 
-    message = Mail(
-        from_email=from_email,
-        to_emails=to_list,
-        subject=subject,
-        html_content=html_body,
-    )
-    message.add_content(Content("text/plain", plain_text))
-
     try:
-        sg = SendGridAPIClient(api_key)
-        response = sg.send(message)
-        print(f"[INFO] Email sent. Status code: {response.status_code}")
+        params = {
+            "from": from_email,
+            "to": to_list,
+            "subject": subject,
+            "html": html_body,
+            "text": plain_text,
+        }
+
+        response = resend.Emails.send(params)
+        print(f"[INFO] Email sent successfully. ID: {response.get('id', 'N/A')}")
         return True
     except Exception as exc:
-        print(f"[ERROR] SendGrid error: {exc}")
+        print(f"[ERROR] Resend error: {exc}")
         return False
 
 
@@ -260,14 +262,13 @@ def send_email(subject, html_body, plain_text, recipients, from_email, api_key):
 
 def main():
     # --- Validate secrets ---
-    api_key = os.environ.get("SENDGRID_API_KEY")
+    api_key = os.environ.get("RESEND_API_KEY")
     recipients_raw = os.environ.get("EMAIL_RECIPIENTS")
-    from_email = os.environ.get("EMAIL_FROM")
+    from_email = os.environ.get("EMAIL_FROM") or DEFAULT_FROM_EMAIL
 
     missing = [name for name, val in [
-        ("SENDGRID_API_KEY", api_key),
+        ("RESEND_API_KEY", api_key),
         ("EMAIL_RECIPIENTS", recipients_raw),
-        ("EMAIL_FROM", from_email),
     ] if not val]
 
     if missing:

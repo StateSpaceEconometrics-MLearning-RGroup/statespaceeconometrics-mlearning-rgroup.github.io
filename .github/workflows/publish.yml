@@ -49,7 +49,7 @@ jobs:
       - name: Enviar notificación de nueva sesión
         if: steps.check_sesiones.outputs.changed == 'true'
         env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
         run: |
