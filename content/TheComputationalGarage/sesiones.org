@@ -13,10 +13,10 @@
 
 * 2026
 
-** 2026-04-01
+** 2026-04-02
    :PROPERTIES:
    :HTML_CONTAINER_CLASS: session
-   :SCHEDULED: <2026-04-01 Thu 11:30>
+   :SCHEDULED: <2026-04-02 Thu 11:30>
    :SPEAKERS: Máximo Meridio
    :LOCATION: Teatro de Mérida o el Coliseo
    :END:
