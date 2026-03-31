@@ -1,148 +1,95 @@
 # Configuración de Notificaciones por Email
 
-Este documento describe cómo configurar las notificaciones automáticas por email usando **Resend**.
+Este documento describe cómo configurar las notificaciones automáticas por email usando **Gmail SMTP**.
 
-## ¿Por qué Resend?
+## ¿Por qué Gmail?
 
-Resend es mucho más simple de configurar que SendGrid para sitios en GitHub Pages:
-- ✅ No requiere verificación DNS
-- ✅ Puedes empezar inmediatamente con `onboarding@resend.dev`
-- ✅ 100 emails gratis al día (3,000 al mes)
-- ✅ API muy simple
-
----
-
-## Paso 1: Crear cuenta en Resend
-
-1. Ve a [https://resend.com/signup](https://resend.com/signup)
-2. Regístrate con tu email (puedes usar Gmail, email institucional, etc.)
-3. Verifica tu email
-4. Inicia sesión en [https://resend.com](https://resend.com)
+Gmail SMTP es una solución confiable y gratuita que permite:
+- ✅ Enviar hasta 500 emails por día
+- ✅ Enviar a múltiples destinatarios sin verificación de dominio
+- ✅ Usar autenticación segura con contraseñas de aplicación
+- ✅ No requiere configuración DNS
 
 ---
 
-## Paso 2: Obtener API Key
+## Cuenta ya configurada
 
-1. En el dashboard de Resend, ve a **API Keys** (en el menú lateral)
-2. Haz clic en **Create API Key**
-3. Dale un nombre descriptivo (ej: `GitHub Actions - Computational Garage`)
-4. Selecciona el permiso **Sending access**
-5. Haz clic en **Add**
-6. **Copia la API key** (empieza con `re_...`) - solo la verás una vez
-7. Guárdala en un lugar seguro temporalmente
+La cuenta **thecomputationalgarage@gmail.com** ya está configurada y lista para usar. Los mantenedores del repositorio tienen acceso a las credenciales.
 
 ---
 
-## Paso 3: Configurar GitHub Secrets
+## GitHub Secrets Configurados
 
-1. Ve al repositorio en GitHub
-2. Haz clic en **Settings** (configuración del repositorio)
-3. En el menú lateral, ve a **Secrets and variables** → **Actions**
-4. Haz clic en **New repository secret**
+Los siguientes secrets ya están configurados en GitHub Actions:
 
-### Secret 1: `RESEND_API_KEY`
-
-- **Name:** `RESEND_API_KEY`
-- **Value:** La API key que copiaste de Resend (ej: `re_xxxxxxxxxxxxx`)
-- Haz clic en **Add secret**
-
-### Secret 2: `EMAIL_RECIPIENTS`
-
-- **Name:** `EMAIL_RECIPIENTS`
-- **Value:** Lista de emails separados por comas (ej: `email1@ucm.es,email2@ucm.es,email3@ucm.es`)
-- Haz clic en **Add secret**
-
-### Secret 3: `EMAIL_FROM` (OPCIONAL)
-
-- **Name:** `EMAIL_FROM`
-- **Value:** `onboarding@resend.dev` (o tu dominio verificado si tienes uno)
-- Haz clic en **Add secret**
-
-> **Nota:** Si no configuras `EMAIL_FROM`, se usará automáticamente `onboarding@resend.dev`
+| Secret | Descripción | Valor |
+|--------|-------------|-------|
+| `EMAIL_USER` | Dirección de Gmail | `thecomputationalgarage@gmail.com` |
+| `EMAIL_PASSWORD` | Contraseña de aplicación de Gmail | (16 caracteres - configurada) |
+| `EMAIL_RECIPIENTS` | Lista de destinatarios | Emails separados por comas |
 
 ---
 
-## Paso 4: Probar el sistema
+## Modificar la lista de destinatarios
 
-### Prueba manual:
+Para cambiar quién recibe las notificaciones:
 
-1. Edita `content/TheComputationalGarage/sesiones.org`
-2. Modifica la **fecha** de la primera subsección (la más reciente)
-3. Haz commit y push:
-   ```bash
-   git add content/TheComputationalGarage/sesiones.org
-   git commit -m "test: probar notificación de sesión"
-   git push
-   ```
-4. Ve a **Actions** en GitHub y espera a que se ejecute el workflow
-5. Revisa los logs del step "Enviar notificación de nueva sesión"
-6. Verifica que los destinatarios recibieron el email
+1. Ve a **Settings** del repositorio
+2. **Secrets and variables** → **Actions**
+3. Haz clic en **EMAIL_RECIPIENTS** → **Update secret**
+4. Modifica la lista de emails (formato: `email1@ucm.es,email2@ucm.es,email3@ucm.es`)
+5. **IMPORTANTE:** Sin espacios después de las comas
+6. Haz clic en **Update secret**
+
+---
+
+## Cómo funciona
+
+Cada vez que se actualiza el archivo `content/TheComputationalGarage/sesiones.org` y la fecha de la primera sesión cambia:
+
+1. GitHub Actions detecta el cambio automáticamente
+2. El script extrae los detalles de la sesión (fecha, ponentes, hora, lugar)
+3. Se envía un email HTML desde `thecomputationalgarage@gmail.com`
+4. Todos los emails en `EMAIL_RECIPIENTS` reciben la invitación
 
 ---
 
 ## Solución de problemas
 
-### El email no llega
+### El email no se envió
 
-1. **Revisa la carpeta de spam** - los primeros emails pueden caer ahí
-2. **Verifica los logs** en GitHub Actions para ver si hay errores
-3. **Comprueba los secrets** - asegúrate de que `RESEND_API_KEY` y `EMAIL_RECIPIENTS` están configurados
-4. **Revisa el dashboard de Resend** en [https://resend.com/emails](https://resend.com/emails) para ver el estado de los envíos
+**Verifica:**
+1. Ve a **Actions** → última ejecución del workflow
+2. Expande el step "Enviar notificación de nueva sesión"
+3. Busca mensajes de error en los logs
 
-### Error "API key not found"
+**Errores comunes:**
+- `[ERROR] SMTP error: (535, ...)` → Contraseña de aplicación incorrecta
+- `[ERROR] No valid recipient addresses found` → Lista de emails vacía o mal formateada
+- `[INFO] First session date unchanged` → La fecha de la sesión no cambió
 
-- Verifica que el secret `RESEND_API_KEY` está correctamente configurado
-- La API key debe empezar con `re_`
+### Regenerar contraseña de aplicación
 
-### Error "Invalid from address"
+Si es necesario crear una nueva contraseña de aplicación:
 
-- Si usas un dominio personalizado, debe estar verificado en Resend
-- Para pruebas, usa `onboarding@resend.dev` (no requiere verificación)
-
-### Los emails se marcan como spam
-
-- Usa `onboarding@resend.dev` como remitente para empezar
-- Si quieres emails más profesionales, considera comprar un dominio (~10€/año) y verificarlo en Resend
-
----
-
-## Actualizar lista de destinatarios
-
-Para cambiar quién recibe las notificaciones:
-
-1. Ve a **Settings** → **Secrets and variables** → **Actions**
-2. Haz clic en `EMAIL_RECIPIENTS`
-3. Haz clic en **Update**
-4. Modifica la lista de emails (separados por comas)
-5. Haz clic en **Update secret**
+1. Inicia sesión en Gmail con `thecomputationalgarage@gmail.com`
+2. Ve a **Cuenta de Google** → **Seguridad**
+3. **Verificación en dos pasos** → **Contraseñas de aplicaciones**
+4. Genera una nueva contraseña (16 caracteres)
+5. Actualiza el secret `EMAIL_PASSWORD` en GitHub
+6. Revoca la contraseña anterior
 
 ---
 
-## Límites del plan gratuito
+## Límites de Gmail
 
-Resend plan gratuito:
-- 100 emails/día
-- 3,000 emails/mes
-- Sin necesidad de tarjeta de crédito
-
-Para este proyecto (notificaciones de sesiones), es más que suficiente.
+- **500 emails por día** (más que suficiente para este uso)
+- **100 destinatarios por email**
+- Retraso de ~1 segundo entre envíos
 
 ---
 
-## Migrar a dominio personalizado (opcional)
+## Información de contacto
 
-Si en el futuro quieres emails desde tu propio dominio (ej: `noreply@tugrupo.com`):
-
-1. Compra un dominio en Namecheap, Google Domains, etc. (~10€/año)
-2. En Resend dashboard, ve a **Domains** → **Add Domain**
-3. Sigue las instrucciones para agregar registros DNS
-4. Una vez verificado, actualiza el secret `EMAIL_FROM` con tu nuevo dominio
-
----
-
-## Recursos adicionales
-
-- [Documentación de Resend](https://resend.com/docs)
-- [Resend Python SDK](https://github.com/resend/resend-python)
-- [Dashboard de Resend](https://resend.com)
+Para problemas con la cuenta de Gmail o las notificaciones, contacta a los mantenedores del repositorio.
 
