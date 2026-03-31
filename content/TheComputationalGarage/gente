@@ -1,0 +1,40 @@
+#    -*- mode: org -*-
+
+#+BEGIN_SRC emacs-lisp :results none
+(require 'org-crypt)
+(org-crypt-use-before-save-magic)
+(setq org-tags-exclude-from-inheritance '("crypt"))
+
+(setq org-crypt-key nil)
+;; GPG key to use for encryption.
+;; nil means  use symmetric encryption unconditionally.
+;; "" means use symmetric encryption unless heading sets CRYPTKEY property.
+
+(setq auto-save-default nil)
+;; Auto-saving does not cooperate with org-crypt.el: so you need to
+;; turn it off if you plan to use org-crypt.el quite often.  Otherwise,
+;; you'll get an (annoying) message each time you start Org.
+
+;; To turn it off only locally, you can insert this:
+;;
+;; # -*- buffer-auto-save-file-name: nil; -*-
+#+END_SRC
+
+=M-x org-decrypt-entry= para desenciptar
+
+=M-x org-encrypt-entry= para encriptar
+
+- F Encestar bolitas de pappel 3
+
+* Lista :crypt:
+
+-----BEGIN PGP MESSAGE-----
+
+jA0ECQMCPysOcJaE05//0sBNATwQ6kc78e8DeZp2iMo/Ey7OO9spDUu9PHmOwCPT
+EbYSkRcJDTOvaFmfMpOpdB3RDEo1A/t2obC9DQttPV4imiNPwBSwWQ6CnP9Cvh4E
+gcmZFSEXQk63wxr/puERSGOM4Hn4EEAlIdvLaq5wEuZ4awM5OLWiEIEtsjUkYocO
+qlVJXs4zWLRqkqd2zGN85/UMBxnLpbwtsafJl9QbfJaLILQly2TO97l/LBj4FSXu
+bteXnB+JArA/9NATfXwPhV1tWTLE94Fx0v9IZqVt4ETiLcQABrhkXnToav9IA0hb
+Xnb6JlzyRdc01P+ChXWbEdDS5wCUzftk/IWpeSNxOd54eBwINJOfiT0e8pTTKyk=
+=LQQa
+-----END PGP MESSAGE-----

@@ -14,7 +14,7 @@ Gmail SMTP es una solución confiable y gratuita que permite:
 
 ## Cuenta ya configurada
 
-La cuenta **thecomputationalgarage@gmail.com** ya está configurada y lista para usar. Los mantenedores del repositorio tienen acceso a las credenciales.
+La cuenta **XXXcomputationalXXXXX@gmail.com** ya está configurada y lista para usar. Los mantenedores del repositorio tienen acceso a las credenciales.
 
 ---
 
@@ -24,7 +24,7 @@ Los siguientes secrets ya están configurados en GitHub Actions:
 
 | Secret | Descripción | Valor |
 |--------|-------------|-------|
-| `EMAIL_USER` | Dirección de Gmail | `thecomputationalgarage@gmail.com` |
+| `EMAIL_USER` | Dirección de Gmail | `XXXcomputationalXXXXX@gmail.com` |
 | `EMAIL_PASSWORD` | Contraseña de aplicación de Gmail | (16 caracteres - configurada) |
 | `EMAIL_RECIPIENTS` | Lista de destinatarios | Emails separados por comas |
 
@@ -49,7 +49,7 @@ Cada vez que se actualiza el archivo `content/TheComputationalGarage/sesiones.or
 
 1. GitHub Actions detecta el cambio automáticamente
 2. El script extrae los detalles de la sesión (fecha, ponentes, hora, lugar)
-3. Se envía un email HTML desde `thecomputationalgarage@gmail.com`
+3. Se envía un email HTML desde `XXXcomputationalXXXXX@gmail.com`
 4. Todos los emails en `EMAIL_RECIPIENTS` reciben la invitación
 
 ---
@@ -72,7 +72,7 @@ Cada vez que se actualiza el archivo `content/TheComputationalGarage/sesiones.or
 
 Si es necesario crear una nueva contraseña de aplicación:
 
-1. Inicia sesión en Gmail con `thecomputationalgarage@gmail.com`
+1. Inicia sesión en Gmail con `XXXcomputationalXXXXX@gmail.com`
 2. Ve a **Cuenta de Google** → **Seguridad**
 3. **Verificación en dos pasos** → **Contraseñas de aplicaciones**
 4. Genera una nueva contraseña (16 caracteres)
