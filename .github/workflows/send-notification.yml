@@ -1,0 +1,34 @@
+name: Send Email Notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      notification_type:
+        description: 'Type of notification to send'
+        required: false
+        default: 'announcement'
+        type: choice
+        options:
+          - announcement
+          - reminder
+  schedule:
+    - cron: '0 7 * * *'  # Daily at 7:00 UTC (8:00 AM Madrid winter, 9:00 AM Madrid summer)
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send email notification
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
+          TRIGGER_TYPE: ${{ github.event_name }}
+          NOTIFICATION_TYPE: ${{ github.event.inputs.notification_type || 'reminder' }}
+        run: |
+          python3 scripts/send_notification_standalone.py
