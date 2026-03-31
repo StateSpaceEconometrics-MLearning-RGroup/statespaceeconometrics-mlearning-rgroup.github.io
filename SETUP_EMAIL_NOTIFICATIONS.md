@@ -89,6 +89,33 @@ Si es necesario crear una nueva contraseña de aplicación:
 
 ---
 
+## Enviar emails manualmente
+
+Puedes enviar emails sin modificar `sesiones.org` usando el workflow manual:
+
+1. Ve a **Actions** → **Send Email Notification**
+2. Haz clic en **Run workflow**
+3. Selecciona el tipo de notificación:
+   - **announcement**: Envía aviso de la sesión actual (primera sesión en `sesiones.org`)
+   - **reminder**: Envía recordatorio de la próxima sesión
+4. Haz clic en **Run workflow**
+
+El email se enviará en ~10 segundos (sin regenerar las páginas web).
+
+---
+
+## Recordatorios automáticos
+
+El sistema envía recordatorios automáticamente:
+
+- **Cuándo**: Todos los días a las 8:00 AM (hora de Madrid en invierno, 9:00 AM en verano)
+- **Condición**: Solo si hay una sesión programada para mañana
+- **Contenido**: Email de recordatorio con los detalles de la sesión
+
+Si no hay sesión mañana, no se envía ningún email.
+
+---
+
 ## Información de contacto
 
 Para problemas con la cuenta de Gmail o las notificaciones, contacta a los mantenedores del repositorio.
