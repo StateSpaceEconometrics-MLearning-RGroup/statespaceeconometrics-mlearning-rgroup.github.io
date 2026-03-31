@@ -51,9 +51,8 @@ jobs:
       - name: Enviar notificación de nueva sesión
         if: steps.check_sesiones.outputs.changed == 'true'
         env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
         run: |
-          python3 -m pip install --quiet -r requirements.txt
           python3 scripts/send_session_notification.py

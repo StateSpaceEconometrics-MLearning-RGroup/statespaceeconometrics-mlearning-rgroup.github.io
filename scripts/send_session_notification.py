@@ -3,23 +3,25 @@
 send_session_notification.py
 
 Detects when a new session has been added to sesiones.org (first subsection
-under the current year) and sends an HTML email notification via Resend.
+under the current year) and sends an HTML email notification via Gmail SMTP.
 
 Required environment variables (GitHub Secrets):
-  RESEND_API_KEY     – API key for Resend
+  EMAIL_USER         – Gmail address (thecomputationalgarage@gmail.com)
+  EMAIL_PASSWORD     – Gmail app password (16 characters)
   EMAIL_RECIPIENTS   – Comma-separated list of recipient email addresses
-  EMAIL_FROM         – Sender email address (default: onboarding@resend.dev for testing)
 """
 
 import os
 import re
+import smtplib
 import subprocess
 import sys
 from datetime import datetime
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 SESIONES_PATH = "content/TheComputationalGarage/sesiones.org"
 WEB_URL = "https://statespaceeconometrics-mlearning-rgroup.github.io/TheComputationalGarage/sesiones.html"
-DEFAULT_FROM_EMAIL = "onboarding@resend.dev"
 
 SPANISH_WEEKDAYS = {
     0: "lunes",
@@ -224,35 +226,39 @@ Universidad Complutense de Madrid
 
 
 # ---------------------------------------------------------------------------
-# Resend sending
+# Gmail SMTP sending
 # ---------------------------------------------------------------------------
 
-def send_email(subject, html_body, plain_text, recipients, from_email, api_key):
-    """Send the notification email via Resend."""
-    import resend
-
-    resend.api_key = api_key
-
-    # Resend expects a list of recipient emails
+def send_email(subject, html_body, plain_text, recipients, from_email, password):
+    """Send the notification email via Gmail SMTP."""
+    # Validate recipient list
     to_list = [addr.strip() for addr in recipients if addr.strip()]
     if not to_list:
         print("[ERROR] No valid recipient addresses found.")
         return False
 
-    try:
-        params = {
-            "from": from_email,
-            "to": to_list,
-            "subject": subject,
-            "html": html_body,
-            "text": plain_text,
-        }
+    # Create message
+    message = MIMEMultipart("alternative")
+    message["From"] = from_email
+    message["To"] = ", ".join(to_list)
+    message["Subject"] = subject
 
-        response = resend.Emails.send(params)
-        print(f"[INFO] Email sent successfully. ID: {response.get('id', 'N/A')}")
+    # Attach plain text and HTML versions
+    part1 = MIMEText(plain_text, "plain", "utf-8")
+    part2 = MIMEText(html_body, "html", "utf-8")
+    message.attach(part1)
+    message.attach(part2)
+
+    try:
+        # Connect to Gmail SMTP server
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(from_email, password)
+            server.sendmail(from_email, to_list, message.as_string())
+
+        print(f"[INFO] Email sent successfully to {len(to_list)} recipient(s).")
         return True
     except Exception as exc:
-        print(f"[ERROR] Resend error: {exc}")
+        print(f"[ERROR] SMTP error: {exc}")
         return False
 
 
@@ -262,12 +268,13 @@ def send_email(subject, html_body, plain_text, recipients, from_email, api_key):
 
 def main():
     # --- Validate secrets ---
-    api_key = os.environ.get("RESEND_API_KEY")
+    email_user = os.environ.get("EMAIL_USER")
+    email_password = os.environ.get("EMAIL_PASSWORD")
     recipients_raw = os.environ.get("EMAIL_RECIPIENTS")
-    from_email = os.environ.get("EMAIL_FROM") or DEFAULT_FROM_EMAIL
 
     missing = [name for name, val in [
-        ("RESEND_API_KEY", api_key),
+        ("EMAIL_USER", email_user),
+        ("EMAIL_PASSWORD", email_password),
         ("EMAIL_RECIPIENTS", recipients_raw),
     ] if not val]
 
@@ -316,7 +323,7 @@ def main():
     print(f"[INFO] Subject: {subject}")
     print(f"[INFO] Sending to {len(recipients)} recipient(s)...")
 
-    success = send_email(subject, html_body, plain_text, recipients, from_email, api_key)
+    success = send_email(subject, html_body, plain_text, recipients, email_user, email_password)
     if not success:
         print("[WARNING] Email could not be sent. Continuing workflow without failing.")
     else:
