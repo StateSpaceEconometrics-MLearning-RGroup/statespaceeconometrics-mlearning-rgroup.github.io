@@ -12,7 +12,7 @@ on:
           - announcement
           - reminder
   schedule:
-    - cron: '0 7 * * *'  # Daily at 7:00 UTC (8:00 AM Madrid winter, 9:00 AM Madrid summer)
+    - cron: '0 5 * * *'  # Daily at 5:00 UTC (8:00 AM Madrid winter, 9:00 AM Madrid summer)
 
 jobs:
   send-notification:
