@@ -3,46 +3,56 @@
 We need a small elisp script to setup and publish  it.
 
 #+BEGIN_SRC emacs-lisp :tangle ./publish.el :results silent
-  (require 'ox-publish)
+(require 'ox-publish)
 
-  (use-package htmlize)
+(use-package htmlize)
 
-  ;; Customize the HTML output
-  (setq org-html-validation-link nil            ;; Don't show validation link
-        org-html-head-include-scripts nil       ;; Use our own scripts
-        org-html-head-include-default-style nil ;; Use our own styles
-        org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+;; Customize the HTML output
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+<meta charset=\"UTF-8\">")
 
-  (let* ((base-directory "./")
-         (org-export-with-broken-links t)
-         (org-publish-project-alist `(("html"
-  				     :base-directory ,(concat base-directory "content")
-  				     :base-extension "org"
-  				     :publishing-directory ,(concat base-directory "docs")
-  				     :exclude "docs"
-  				     :recursive t
-  				     :publishing-function org-html-publish-to-html
-  				     :auto-preamble t
-  				     :auto-sitemap t
-                                       :with-author nil           ;; Don't include author name
-                                       :with-creator nil          ;; Include Emacs and Org versions in footer
-                                       :with-toc t                ;; Include a table of contents
-                                       :section-numbers nil       ;; Don't include section numbers
-                                       :time-stamp-file nil)
-  				    
-  				    ("static-html"
-  				     :base-directory ,(concat base-directory "content")
-  				     :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|dat\\|mov\\|txt\\|svg\\|aiff"
-  				     :publishing-directory ,(concat base-directory "docs")
-  				     :exclude "docs"
-  				     :recursive t
-  				     :publishing-function org-publish-attachment)
+(let* ((base-directory "./")
+       (org-export-with-broken-links t)
+       (org-publish-project-alist `(("html"
+				     :base-directory ,(concat base-directory "content")
+				     :base-extension "org"
+				     :publishing-directory ,(concat base-directory "docs")
+				     :exclude "docs"
+				     :recursive t
+				     :publishing-function org-html-publish-to-html
+				     :auto-preamble t
+				     :auto-sitemap t
+                                     :with-author nil           ;; Don't include author name
+                                     :with-creator nil          ;; Include Emacs and Org versions in footer
+                                     :with-toc t                ;; Include a table of contents
+                                     :section-numbers nil       ;; Don't include section numbers
+                                     :time-stamp-file nil)
+				    
+				    ("static-html"
+				     :base-directory ,(concat base-directory "content")
+				     :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|dat\\|mov\\|txt\\|svg\\|aiff\\|xml\\|html"
+				     :publishing-directory ,(concat base-directory "docs")
+				     :exclude "docs"
+				     :recursive t
+				     :publishing-function org-publish-attachment)
 
-  				    ;; ... all the components ...
-  				    ;("scimax-eln" :components ("html" "static-html" "pdf")))))
-  				    ("web-grupo" :components ("html" "static-html")))))
+				    ("static-root"
+				     :base-directory ,base-directory
+				     :base-extension "txt"
+				     :publishing-directory ,(concat base-directory "docs")
+				     :exclude "docs\\|content\\|css\\|scripts\\|.git"
+				     :recursive nil
+				     :publishing-function org-publish-attachment)
 
-    (org-publish "web-grupo" t))
+				    ;; ... all the components ...
+				    ;("scimax-eln" :components ("html" "static-html" "pdf")))))
+				    ("web-grupo" :components ("html" "static-html" "static-root")))))
+
+  (org-publish "web-grupo" t))
 #+END_SRC
 
 We can check out the local version.
@@ -66,11 +76,20 @@ He excluido del proceso la generación de pdfs. El correspondiente código exclu
 				     :auto-sitemap t)
 #+end_src
 
+** Fichero robots.txt
+
+#+BEGIN_SRC text :tangle ./robots.txt :eval no
+User-agent: *
+Allow: /
+
+Sitemap: https://statespaceeconometrics-mlearning-rgroup.github.io/sitemap.xml
+#+END_SRC
+
 ** COMMENT Commit and publish the html pages
 
 To publish these we go into the html directory, commit all the files and push them to GitHUB.
 
-#+BEGIN_SRC sh
+#+BEGIN_SRC sh :eval no
 git add docs
 git commit docs -m "publish"
 git push
