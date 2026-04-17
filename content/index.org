@@ -1,7 +1,9 @@
-#+title: 940223 - ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING
+# +title: 940223 - ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING
+#+title: ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING
 #+LANGUAGE: es
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
+#+OPTIONS: title:nil
 
 # Metadatos SEO para Google y otros buscadores
 #+HTML_HEAD: <meta name="description" content="Grupo UCM de econometría en espacio de estados y machine learning. Investigación en series temporales, modelos factoriales y predicción económica.">
@@ -11,7 +13,7 @@
 #+HTML_HEAD: <meta property="og:description" content="Grupo de investigación de la Universidad Complutense de Madrid fundado en 2004. Investigación en series temporales, modelos factoriales dinámicos, predicción económica y machine learning.">
 #+HTML_HEAD: <meta property="og:type" content="website">
 #+HTML_HEAD: <meta property="og:url" content="https://statespaceeconometrics-mlearning-rgroup.github.io/index.html">
-#+HTML_HEAD: <meta property="og:image" content="https://statespaceeconometrics-mlearning-rgroup.github.io/logo_eesml_ucm.svg">
+#+HTML_HEAD: <meta property="og:image" content="https://statespaceeconometrics-mlearning-rgroup.github.io/content/logo_eesml_ucm.svg">
 #+HTML_HEAD: <meta name="twitter:card" content="summary_large_image">
 #+HTML_HEAD: <meta name="geo.region" content="ES-MD">
 #+HTML_HEAD: <meta name="geo.placename" content="Madrid, España">
@@ -25,7 +27,14 @@
 # +attr_html: :width 250px :align right
 # https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png
 
-Nuestro [[https://www.ucm.es/grupos/grupo/225][grupo de investigación]] fue fundado en diciembre de 2004 con el objetivo de organizar nuestras investigaciones sobre la teoría y aplicaciones de los métodos en el Espacio de Estados, enfocándonos especialmente a la modelización econométrica de series temporales. 
+# +CAPTION: Título de la imagen
+#+attr_html: :width 1000px
+#+ATTR_HTML: :align center
+#+ATTR_LATEX: :width 0.8\textwidth :center t
+#+ATTR_ORG: :width 800
+[[file:logo_eesml_ucm.svg]]
+
+El grupo de investigación [[https://www.ucm.es/grupos/grupo/225][/ECONOMETRÍA EN ESPACIO DE LOS ESTADOS Y MACHINE LEARNING/]] fue fundado en diciembre de 2004 con el objetivo de organizar nuestras investigaciones sobre la teoría y aplicaciones de los métodos en el Espacio de Estados, enfocándonos especialmente a la modelización econométrica de series temporales. 
 Con el tiempo, hemos ampliado nuestro ámbito de estudio al campo del /Machine Learning/.
  
 - [[https://produccioncientifica.ucm.es/grupos/5080/detalle][Detalle del grupo]]
