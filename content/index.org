@@ -3,6 +3,19 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 
+# Metadatos SEO para Google y otros buscadores
+#+HTML_HEAD: <meta name="description" content="Grupo UCM de econometría en espacio de estados y machine learning. Investigación en series temporales, modelos factoriales y predicción económica.">
+#+HTML_HEAD: <meta name="keywords" content="Econometría, Machine Learning, Espacio de Estados, series temporales, modelos de subespacios, subspace methods, modelos factoriales dinámicos, predicción económica, forecasting, análisis de convergencia de precios, Google Trends, Shapley values, XGBoost, UCM, Universidad Complutense de Madrid, AI trustworthy, green AI, DHR, Dynamic Harmonic Regression, Grupo de Investigación">
+#+HTML_HEAD: <meta name="author" content="Grupo de Investigación UCM - Econometría en Espacio de los Estados y Machine Learning">
+#+HTML_HEAD: <meta property="og:title" content="Econometría en Espacio de Estados y Machine Learning - UCM">
+#+HTML_HEAD: <meta property="og:description" content="Grupo de investigación de la Universidad Complutense de Madrid fundado en 2004. Investigación en series temporales, modelos factoriales dinámicos, predicción económica y machine learning.">
+#+HTML_HEAD: <meta property="og:type" content="website">
+#+HTML_HEAD: <meta property="og:url" content="https://statespaceeconometrics-mlearning-rgroup.github.io/index.html">
+#+HTML_HEAD: <meta property="og:image" content="https://statespaceeconometrics-mlearning-rgroup.github.io/logo_eesml_ucm.svg">
+#+HTML_HEAD: <meta name="twitter:card" content="summary_large_image">
+#+HTML_HEAD: <meta name="geo.region" content="ES-MD">
+#+HTML_HEAD: <meta name="geo.placename" content="Madrid, España">
+
 # ###########
 # ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
 #+SETUPFILE: ../css/simple_inlineUCM.theme  
